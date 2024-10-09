@@ -1,0 +1,27 @@
+<main>
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="work">Work: </label>
+    <input type="string" id="work" [(ngModel)]="work" />
+    <br />
+    <button (click)="add()">Add to employee</button>
+  </div>
+  <div>
+
+    @if(employeeList.length === 0){
+
+    }@else{
+    <ol>
+      @for(employee of employeeList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Name: {{ employee.name }}
+        <br />
+        Year: {{ employee.work }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

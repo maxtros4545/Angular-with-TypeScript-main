@@ -1,0 +1,27 @@
+<main>
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="year">Year: </label>
+    <input type="number" id="year" [(ngModel)]="year" />
+    <br />
+    <button (click)="add()">Add to car models</button>
+  </div>
+  <div>
+   
+    @if( carModelList.length === 0){
+ 
+    }@else{
+    <ol>
+      @for( car of carModelList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Name: {{ car.name }} <br />
+        Year: {{ car.year }}
+      </li>
+
+      }
+    </ol>
+    }
+  </div>
+</main>

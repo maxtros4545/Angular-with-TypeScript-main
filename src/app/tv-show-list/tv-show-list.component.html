@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="title">TV Show Title: </label>
+    <input type="text" id="title" [(ngModel)]="title" />
+    <br />
+    <label for="time">Time: </label>
+    <input type="text" id="time" [(ngModel)]="time" />
+    <br />
+    <button (click)="add()">Add to TV show list</button>
+  </div>
+  <div>
+ 
+    @if( showList.length === 0){
+   
+    }@else{
+    <ol>
+      @for( show of showList; track $index){
+      <li [style.marginBottom]="'20px'">
+        TV Show Title: {{ show.title }} <br />
+        Time: {{ show.time }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

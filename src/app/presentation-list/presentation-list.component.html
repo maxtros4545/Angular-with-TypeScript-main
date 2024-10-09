@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="topicTitle">Topic Title: </label>
+    <input type="text" id="topicTitle" [(ngModel)]="topicTitle" />
+    <br />
+    <button (click)="add()">Add to presentation list</button>
+  </div>
+  <div>
+    @if( presentationList.length === 0){
+    }@else{
+    <ol>
+      @for( presentation of presentationList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Topic Title: {{ presentation.topicTitle }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="title">Song Title: </label>
+    <input type="text" id="title" [(ngModel)]="title" />
+    <br />
+    <label for="artist">Artist: </label>
+    <input type="text" id="artist" [(ngModel)]="artist" />
+    <br />
+    <button (click)="add()">Add to music list</button>
+  </div>
+  <div>
+
+    @if( musicList.length === 0){
+
+    }@else{
+    <ol>
+      @for( music of musicList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Song Title: {{ music.title }} <br />
+        Artist: {{ music.artist }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

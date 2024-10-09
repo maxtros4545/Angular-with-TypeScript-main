@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="eventName">Event Name: </label>
+    <input type="text" id="eventName" [(ngModel)]="eventName" />
+    <br />
+    <button (click)="add()">Add to event list</button>
+  </div>
+  <div>
+
+    @if( eventList.length === 0){
+  
+    }@else{
+    <ol>
+      @for( event of eventList; track $index){
+      <li [style.marginBottom]="'20px'">Event Name: {{ event.eventName }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>
